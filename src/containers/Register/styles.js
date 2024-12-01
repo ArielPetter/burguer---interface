@@ -53,11 +53,7 @@ export const Title = styled.h2`
   font-size: 40px;
   font-weight: 400;
   line-height: 40px;
-  color: #ffffff;
-
-  span {
-    color: #9758a6;
-  }
+  color: #9758a6;
 `;
 
 export const Form = styled.form`

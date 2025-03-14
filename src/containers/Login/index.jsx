@@ -53,13 +53,17 @@ export function Login() {
           success: {
             render() {
               setTimeout(() => {
-                navigate('/');
+                navigate('/home');
               }, 2000);
               return 'Seja Bem-vindo';
             },
           },
         },
       );
+      const { token, name, id, admin } = response.data;
+
+      localStorage.setItem('token', token);
+      localStorage.setItem('user', JSON.stringify({ name, id, admin }));
     } catch (error) {
       if (error.response && error.response.status === 401) {
         toast.error('Email ou senha incorretos');
@@ -98,7 +102,7 @@ export function Login() {
         </Form>
 
         <p>
-          Não possui conta? <Link to="/cadastro">Clique aqui.</Link>
+          Não possui conta? <Link to="/register">Clique aqui.</Link>
         </p>
       </RightContainer>
     </Container>

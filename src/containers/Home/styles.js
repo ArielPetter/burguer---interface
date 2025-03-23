@@ -3,20 +3,23 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
+  flex-direction: column; /* Adiciona essa linha para garantir o layout em coluna */
   height: 100vh;
   width: 100vw;
 `;
 
 export const HeaderContainer = styled.div`
-  position: fixed;
+  position: sticky;
+  top: 0;
   background-color: rgba(31, 31, 31, 1);
-  padding: 30px;
+  padding: 6vh;
   width: 100vw;
-  height: 100px;
 
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
+  z-index: 100;
+  overflow: hidden;
 `;
 
 export const StyledLogoContainer = styled.div`
@@ -66,9 +69,12 @@ export const StyledImageContainer = styled.div`
 `;
 
 export const StyledImg = styled.img`
-  width: 23px;
-  height: 21px;
+  width: 25px;
+  height: auto;
   object-fit: cover;
+
+  display: flex;
+  align-items: center;
 `;
 
 export const LinkSair = styled(ReactRouterLink)`
@@ -88,5 +94,96 @@ export const LinkSair = styled(ReactRouterLink)`
 
   &:active {
     color: rgb(90, 0, 0);
+  }
+`;
+
+export const ContainerOrders = styled.div`
+  margin-left: 1vw;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  p {
+    color: #ffffff;
+    width: 48px;
+    height: 10px;
+    font-weight: 400;
+    font-size: 14px;
+    margin-right: 1vw;
+
+    display: flex;
+    align-items: center;
+  }
+`;
+
+export const NotificationBooble = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: orange;
+  color: white;
+  border-radius: 50%;
+
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-left: -1rem;
+  margin-bottom: 1.7rem;
+`;
+
+export const BackgroundHome = styled.div`
+  position: relative;
+  width: 100vw;
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  h1 {
+    position: absolute;
+    top: 10vh;
+    left: 70vw;
+    transform: translate(0%, 0%);
+
+    color: #ffffff;
+    max-width: 435px;
+    height: 20px;
+    font-size: 90px;
+
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    font-family: 'Road Rage', cursive;
+  }
+`;
+
+export const BackgroundMenu = styled.div`
+  position: relative;
+  width: 100vw;
+  height: auto;
+
+  img {
+    width: 100vw;
+    height: auto;
+    object-fit: cover;
+  }
+
+  div {
+    width: 100%;
+  }
+
+  .carousel-wrapper {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 100%;
   }
 `;
